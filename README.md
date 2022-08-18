@@ -1,25 +1,42 @@
-# README
+## Pennode app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A Blog app that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+### Built With
 
-* Ruby version
+- Ruby on Rails
+- Development set up
+- Clone Repository using HTTPS
 
-* System dependencies
+> git clone https://github.com/kinginthenorthcodez/pennode
 
-* Configuration
+- Move into project directory
 
-* Database creation
+> cd pennode
 
-* Database initialization
+### Available Scripts
 
-* How to run the test suite
+> bundle install rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+### Available Scripts to Run Test cases
 
-* Deployment instructions
+> Run following command gem install --no-document rspec -v '>=3.0, < 4.0' > rspec --force-color --format documentation
 
-* ...
-# pennode
+### Author
+
+👤 kinginthenorthcodez
+
+GitHub: @kinginthenorthcodez
+🤝 Contributing
+
+### Contributions, issues, and feature requests are welcome!
+
+- Feel free to check the issues page.
+  https://github.com/kinginthenorthcodez/pennode/issues
+
+### Show your support
+
+Give a ⭐️ if you like this project!
+
+📝 License
+This project is MIT licensed.
