@@ -1,4 +1,7 @@
 class Like < ApplicationRecord
+  validates_presence_of :user
+  validates_presence_of :post
+
   belongs_to :user
   belongs_to :post
 
