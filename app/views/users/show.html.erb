@@ -1,0 +1,13 @@
+<h1> Welcome to Pennode</h1>
+<p> Your data: <table>
+<tr><th>Name </th><th>Bio </th><th>Photo </th> <th>Posts </th></tr> 
+ <tr>
+ <td><%= @user[:name] %> </td>
+ <td><%= @user[:bio] %> </td>
+ <td><%= @user[:photo] %> </td>
+ <td><%= @user[:posts_counter] %> </td> 
+ </tr>
+</table>
+ </p>
+<p> Current User: <%= @user[:name] %> </p>
+<h3> <%= link_to 'View posts',user_posts_path(@posts) %> </h3>
