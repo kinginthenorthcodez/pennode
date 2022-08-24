@@ -1,0 +1,15 @@
+<h1> Welcome to Pennode</h1>
+<p> Your Post data: <table>
+<tr><th>Name User ID </th><th>Title </th><th>Content </th> <th>Commnets</th><th>Likes</th></tr> 
+ <tr>
+ <td><%= @post[:user_id] %> </td>
+ <td><%= @post[:title] %> </td>
+ <td><%= @post[:text] %> </td>
+ <td><%= @post[:comments_counter] %> </td> 
+ <td><%= @post[:likes_counter] %> </td> 
+ </tr>
+</table>
+ </p>
+<p> Current Post: <%= @post[:title] %> </p>
+<p>  Content : <%= @post[:text] %> </p>
+<p>  PARAMS Data : <%= @values %> </p>
