@@ -47,6 +47,8 @@ gem 'bootsnap', require: false
 # ffi dependecies
 gem 'ffi'
 
+# Controller testing
+gem 'rails-controller-testing'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

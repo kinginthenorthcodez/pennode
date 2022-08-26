@@ -1,13 +1,13 @@
-<h1> Welcome to Pennode</h1>
+<h3 style="color: #FF4433;"> User Profile</h3>
 <p> Your data: <table>
 <tr><th>Name </th><th>Bio </th><th>Photo </th> <th>Posts </th></tr> 
  <tr>
- <td><%= @user[:name] %> </td>
- <td><%= @user[:bio] %> </td>
- <td><%= @user[:photo] %> </td>
- <td><%= @user[:posts_counter] %> </td> 
+ <td><%= @user[:name] if @user %> </td>
+ <td><%= @user[:bio] if @user %> </td>
+ <td><%= @user[:photo] if @user %> </td>
+ <td><%= @user[:posts_counter] if @user %> </td> 
  </tr>
 </table>
  </p>
-<p> Current User: <%= @user[:name] %> </p>
-<h3> <%= link_to 'View posts',user_posts_path(@posts) %> </h3>
+<p> Current User: <%= @user[:name] if @user %> </p>
+<h3> <%= link_to 'View posts',user_posts_path(@posts) if @posts %> </h3>

@@ -1,4 +1,4 @@
-<h1> Welcome to Pennode</h1>
+<h3 style="color: #FF4433;">User Posts</h3>
 <p> Glad you reading our posts:</p> 
 <p> Here is your Current Posts: <ul> <% @posts.each { |post| %> <li> <%= link_to post[:title],user_post_path(@user,post) %> </li>  <% } %> </ul> </p>
 <p> Some PARAM Data: <%= @values %></p>
