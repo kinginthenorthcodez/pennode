@@ -1,0 +1,21 @@
+<h3 style="background: rgba(255, 213, 128, 0.3); width: 80%;"> User Profile: <%= user.name %> : <span style="color: #FF4433; font-size: 12px;"> Number of Posts: <%= user.posts_counter %> </span></h3>
+
+<% posts.each do |post| %>
+  <div style="background: rgba(255, 213, 128, 0.1); width: 80%;" padding: 10px; margin: 5px; border-radius: 5px;%>
+    <h3>Post &#35;<%=post.id %> </h3>
+    <p style= "color: #900C3F; padding: 5px; font-size: 24px;"> <%= post.text %> <span style="color: #FF4433; font-size: 12px;">Comments: <%= post.comments_counter %> </span> <span style="color: #FF4433; font-size: 12px;">Likes: <%= post.likes_counter %> </span> </p>
+  </div>
+  <div> 
+  <% comments.each do |comment| %>
+    <% post_users.each do |user| %>
+     <% if comment.post_id == post.id && user.id == comment.user_id %>
+     <p style= "color: #900C3F; padding: 5px;">
+     <%= user.name %>  
+     <%= comment.text %> 
+     </p>
+     <% end %>
+      <% end %>
+    <% end %>
+  </div>
+ <% end %>
+

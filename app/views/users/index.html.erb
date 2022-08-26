@@ -1,3 +1,8 @@
 <h3 style="color: #FF4433;">Pennode Users</h3>
 <p> Glad you joined us:</p>
-<p> Current Users: <ul style="color: orange;"> <% @users.each { |user| %> <li> <%= link_to user[:name], user_path(user) %> </li>  <% } %> </ul> </p>
+<p> Current Users: <ul style="color: orange;"> <% @users.each { |user| %> <li> <%= link_to user[:name], user_path(user)%> Number of Posts: <%= user[:posts_counter] %> </li>  <% } %> </ul> </p>
+<p>Here are a few of our fine users:</p>
+<% @users.each do |user| %>
+  <%= render partial:'shared/product', locals: { user: user }, spacer_template: 'shared/product_ruler' %>
+  
+<% end %>
