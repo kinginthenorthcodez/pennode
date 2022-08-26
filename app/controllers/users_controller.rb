@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @posts = Post.find_by(id: params[:id])
   end
 
+  def create; end
+
   private
 
   def user_params
