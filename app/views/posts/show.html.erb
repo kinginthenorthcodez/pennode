@@ -1,21 +1,22 @@
 <h3 style="color: #FF4433;">User Post</h3>
-<p> Your Post data: <table>
-
-  <div style="background: rgba(255, 213, 128, 0.1); width: 80%;" padding: 10px; margin: 5px; border-radius: 5px;%>
-    <h3>Post &#35;<%=@post.id %> by <%= @user.name %>  <span style="color: #FF4433; font-size: 12px;">Comments: <%= @post.comments_counter %> </span> <span style="color: #FF4433; font-size: 12px;">Likes: <%= @post.likes_counter %> </span> </h3>
-    <p style= "color: #900C3F; padding: 5px; font-size: 24px;"> <%= @post.text %></p>
+<div class="container">
+  <div class="post"> 
+     <div class="post-header">
+       <h3>Post &#35;<%=@post.id %> by <%= @user.name %></h3>
+       <p class = "profile-stats"><span class= "comments-stats">Comments: <%= @post.comments_counter %></span><span class= "likes-stats">Likes:<%= @post.likes_counter %> </span></p>
+     </div>
+     <p> <%= @post.text %> </p>
   </div>
-  <div> 
-  <% @post_comments.each do |comment| %>
-    <% @post_users.each do |user| %>
-     <% if comment.post_id == @post.id && user.id == comment.user_id %>
-     <p style= "color: #900C3F; padding: 5px;">
-     <%= user.name %>  
-     <%= comment.text %> 
-     </p>
+  <div class= "posts-comment"> 
+     <% @post_comments.each do |comment| %>
+      <% @post_users.each do |user| %>
+       <% if comment.post_id == @post.id && user.id == comment.user_id %>
+        <p style= "color: #900C3F; padding: 5px;">
+         <%= user.name %>  
+         <%= comment.text %> 
+        </p>
+       <% end %>
      <% end %>
-      <% end %>
     <% end %>
   </div>
-
-<p>  PARAMS Data : <%= @values %> </p>
+</div>

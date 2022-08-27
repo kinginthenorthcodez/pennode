@@ -13,3 +13,142 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #181716;
+}
+
+ /* index user */
+.grid-container {
+  display: grid;
+  width: 80%;
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto;
+  gap: 5%;
+  background-color: #fffaf0;
+  padding: 5px;
+  align-content: space-around;
+  justify-content: center;
+  margin: 0 auto;
+  height: auto;
+  margin-bottom: 5px;
+  border: solid 1px #181716;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-photo {
+  display: flex;
+  width: 100px;
+  max-width: 150px;
+}
+
+.profile-photo > img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-details > .profile-name {
+  width: 50%;
+  justify-self: center;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.profile-details > .profile-stats {
+  width: 30%;
+  display: flex;
+  align-self: flex-end;
+  color: #FF4433;
+  gap: 10%;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ /* show user */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  color: #181716;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container > .bio {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  padding: 10px;
+}
+
+.container > .post {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fffaf0;
+  padding: 10px;
+}
+
+.post > .profile-stats {
+  width: 30%;
+  display: flex;
+  align-self: flex-end;
+  color: #FF4433;
+  gap: 10%;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ /* Posts index */
+
+.container > .posts-comment {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fffaf0;
+  padding: 10px;
+}
+
+/* Post show */
+
+.container .post-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .post-header .profile-stats {
+  width: 30%;
+  display: flex;
+  align-self: flex-end;
+  color: #FF4433;
+  gap: 10%;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* footer */
+
+.footer {
+  background: rgba(255, 213, 128, 0.3);
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5%;
+}
