@@ -23,7 +23,7 @@ html {
   background-color: #181716;
 }
 
- /* index user */
+/* index user */
 .grid-container {
   display: grid;
   width: 80%;
@@ -65,18 +65,18 @@ html {
   font-size: 26px;
   font-family: Arial, Helvetica, sans-serif;
 }
- 
+
 .profile-details > .profile-stats {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #FF4433;
+  color: #ff43;
   gap: 10%;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
- /* show user */
+/* show user */
 
 .container {
   display: flex;
@@ -110,13 +110,13 @@ html {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #FF4433;
+  color: #ff43;
   gap: 10%;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
- /* Posts index */
+/* Posts index */
 
 .container > .posts-comment {
   width: 80%;
@@ -136,7 +136,7 @@ html {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #FF4433;
+  color: #ff43;
   gap: 10%;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
