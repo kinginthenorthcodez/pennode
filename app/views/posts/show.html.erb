@@ -1,15 +1,22 @@
 <h3 style="color: #FF4433;">User Post</h3>
-<p> Your Post data: <table>
-<tr><th>Name User ID </th><th>Title </th><th>Content </th> <th>Commnets</th><th>Likes</th></tr> 
- <tr>
- <td><%= @post[:user_id] if @post %> </td>
- <td><%= @post[:title]  if @post %> </td>
- <td><%= @post[:text]  if @post %> </td>
- <td><%= @post[:comments_counter]  if @post %> </td> 
- <td><%= @post[:likes_counter] if @post %> </td> 
- </tr>
-</table>
- </p>
-<p> Current Post: <%= @post[:title]  if @post %> </p>
-<p>  Content : <%= @post[:text] if @post %>  </p>
-<p>  PARAMS Data : <%= @values %> </p>
+<div class="container">
+  <div class="post"> 
+     <div class="post-header">
+       <h3>Post &#35;<%=@post.id %> by <%= @user.name %></h3>
+       <p class = "profile-stats"><span class= "comments-stats">Comments: <%= @post.comments_counter %></span><span class= "likes-stats">Likes:<%= @post.likes_counter %> </span></p>
+     </div>
+     <p> <%= @post.text %> </p>
+  </div>
+  <div class= "posts-comment"> 
+     <% @post_comments.each do |comment| %>
+      <% @post_users.each do |user| %>
+       <% if comment.post_id == @post.id && user.id == comment.user_id %>
+        <p style= "color: #900C3F; padding: 5px;">
+         <%= user.name %>  
+         <%= comment.text %> 
+        </p>
+       <% end %>
+     <% end %>
+    <% end %>
+  </div>
+</div>

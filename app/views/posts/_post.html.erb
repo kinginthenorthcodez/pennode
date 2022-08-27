@@ -1,0 +1,32 @@
+ <div class="container">
+ <div class="grid-container">
+  <div class= "profile-photo">
+   <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=" alt="profile photo" />
+  </div>
+  <div class="profile-details">
+    <h3 class= "profile-name"> <%= user.name %> </h3>
+    <p class = "profile-stats"> Number of posts: <span class= "post-stats"><%= user.posts_counter %></span></p>
+  </div>
+</div>
+<% posts.each do |post| %>
+<div class="post"> 
+   <h3> Post &#35;<%=post.id %></h3>
+   <p> <%= link_to post.text.truncate(15), user_post_path(user,post) %> </p>
+   <p class = "profile-stats"><span class= "comments-stats">Comments: <%= post.comments_counter %></span><span class= "likes-stats">Likes:<%= post.likes_counter %> </span></p>
+</div>
+<div class= "posts-comment"> 
+  <% comments.each do |comment| %>
+    <% post_users.each do |user| %>
+     <% if comment.post_id == post.id && user.id == comment.user_id %>
+     <p style= "color: #900C3F; padding: 5px;">
+     <%= user.name %> : 
+     <%= comment.text %> 
+     </p>
+     <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+
+
