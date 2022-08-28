@@ -70,7 +70,7 @@ html {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #ff4433;
+  color: #ff43;
   gap: 10%;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
@@ -110,7 +110,7 @@ html {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #ff4433;
+  color: #ff43;
   gap: 10%;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
@@ -136,7 +136,7 @@ html {
   width: 30%;
   display: flex;
   align-self: flex-end;
-  color: #ff4433;
+  color: #ff43;
   gap: 10%;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
@@ -170,8 +170,9 @@ html {
 }
 
 .post-form > input {
-   width: 50%;
+  width: 50%;
 }
+
 .comment-section {
   width: 80%;
   height: 400px;
@@ -193,12 +194,12 @@ html {
 }
 
 .btn {
-  color: #ff4433;
+  color: #ff43;
   border: none;
 }
 
 .comment-section > .comment-label {
-  color: #ff4433;
+  color: #ff43;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
 }
