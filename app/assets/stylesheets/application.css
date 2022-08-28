@@ -152,3 +152,54 @@ html {
   padding: 5px;
   margin-top: 5%;
 }
+
+/* Form */
+
+.post-form {
+  width: 80%;
+  background-color: #fffaf0;
+  color: #181716;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+.post-form > .post-title {
+  width: 50%;
+}
+
+.post-form > input {
+  width: 50%;
+}
+
+.comment-section {
+  width: 80%;
+  height: 400px;
+  background-color: #fffaf0;
+  margin: 0 auto;
+}
+
+.comment-section > .comment-input {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.comment-section > .comment-input > .comment-text {
+  width: 80%;
+  height: 300px;
+  border: solid #181716 1px;
+  border-radius: 5%;
+}
+
+.btn {
+  color: #ff43;
+  border: none;
+}
+
+.comment-section > .comment-label {
+  color: #ff43;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}

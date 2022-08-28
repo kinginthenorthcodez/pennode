@@ -12,7 +12,7 @@
       <% @post_users.each do |user| %>
        <% if comment.post_id == @post.id && user.id == comment.user_id %>
         <p style= "color: #900C3F; padding: 5px;">
-         <%= user.name %>  
+         <%= user.name %> : 
          <%= comment.text %> 
         </p>
        <% end %>

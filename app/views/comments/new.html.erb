@@ -1,0 +1,10 @@
+<p style="color: #FF4433;">Your comment </p>
+<div class ="comment-section">
+<%= form_with model: @comment, url: user_post_comments_path do |f| %>
+  <div class="comment-input>
+  <%= f.label :text %>
+  <%= f.text_field :text, class: "comment-text" %>
+  <%= f.submit class: "btn" %>
+  </div>
+<% end %>
+</div>

@@ -12,6 +12,9 @@
   <body>
   <%= render 'shared/header' %>
   <h3 style="color: orange;"> You are just a pen away</h3>
+   <% flash.each do |key, message| %>
+     <p><%= message %></p>
+   <% end %>
     <%= yield %>
   <%= render 'shared/footer' %>
   </body>
