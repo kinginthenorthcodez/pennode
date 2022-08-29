@@ -5,26 +5,24 @@
   </div>
   <div class="profile-details">
     <h3 class= "profile-name"> <%= user.name %> </h3>
-    <p class = "profile-stats"> Number of posts: <span class= "post-stats"><%= user.posts_counter %></span></p>
+    <p class = "profile-stats"> 📝Number of posts: <span class= "post-stats"><%= user.posts_counter %></span></p>
   </div>
 </div>
 <% posts.each do |post| %>
 <div class="post"> 
-   <h3> Post &#35;<%=post.id %></h3>
+   <h3> Post &#35;<%=post.id %><%= link_to '🖋', edit_user_post_path(user,post) %> <%= link_to '🗑', user_post_path(user,post), method: :delete,data: { confirm: 'Are you sure?' } %></h3>
    <p> <%= link_to post.text.truncate(15), user_post_path(user,post) %> </p>
-   <p class = "profile-stats"><span class= "comments-stats">Comments: <%= post.comments_counter %></span><span class= "likes-stats">Likes:<%= post.likes_counter %> </span></p>
+   <p class = "profile-stats"><span class= "comments-stats">Comments: <%= post.comments_counter %></span><span class= "likes-stats">🖒Likes:<%= post.likes_counter %> </span></p>
 </div>
 <div class= "posts-comment"> 
-  <% comments.each do |comment| %>
-    <% post_users.each do |user| %>
-     <% if comment.post_id == post.id && user.id == comment.user_id %>
+     <% post.comments.each do |comment| %>
+     <% if comment.post_id == post.id %>
      <p style= "color: #900C3F; padding: 5px;">
-     <%= user.name %> : 
+     <%= comment.user.name %> : 
      <%= comment.text %> 
      </p>
      <% end %>
-      <% end %>
-    <% end %>
+     <% end %>
   </div>
 <% end %>
 </div>

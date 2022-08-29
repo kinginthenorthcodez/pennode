@@ -1,0 +1,27 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\MAQUEEN\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bootstrap jquery popper.js expose-loader bootswatch jquery-ui autosize
+
+PATH: 
+  C:\Users\MAQUEEN\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MAQUEEN\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\windows\System32\OpenSSH;C:\Users\MAQUEEN\.vscode;node_modules\npm\bin;C:\Users\MAQUEEN\AppData\Roaming\npm;C:\data\db;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\MongoDB\Server\5.0\data;C:\Users\MAQUEEN\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\MAQUEEN\AppData\Roaming\nvm;C:\msys64\mingw64\bin;C:\msys64\mingw32;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\PostgreSQL\14\bin;C:\Ruby31-x64\bin;C:\Users\MAQUEEN\AppData\Local\Microsoft\WindowsApps;C:\Users\MAQUEEN\AppData\Local\Programs\Microsoft VS Code\bin;node_modules\npm\bin;C:\Users\MAQUEEN\AppData\Roaming\npm;C:\Users\MAQUEEN\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\heroku\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

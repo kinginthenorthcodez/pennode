@@ -1,17 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(user_id: params[:user_id])
+    @posts = Post.where(user_id: params[:user_id]).includes(:user) # eager loading..
     @user = User.find_by(id: params[:user_id])
-    @post_comments = Comment.all
-    @post_users = User.all
   end
 
   def show
-    @values = params
     @post = Post.find_by(user_id: params[:user_id], id: params[:id])
     @user = User.find_by(id: params[:user_id])
-    @post_users = User.all
-    @post_comments = Comment.all
+    @post_comments = @post.comments.includes(:user) # eager loading..
   end
 
   def new
@@ -35,6 +31,49 @@ class PostsController < ApplicationController
     else
       flash.now[:error] = 'Error: Post could not be created!'
       render :new, locals: { post:, current_user: }
+    end
+  end
+
+  def edit
+    post = Post.find(params[:id])
+    @user = current_user
+    respond_to do |format|
+      format.html do
+        render :edit, locals: { post:, current_user: @user }
+      end
+    end
+  end
+
+  def update
+    data = post_params
+    @current_user = current_user
+    post = Post.find_by(id: params[:id])
+    respond_to do |format|
+      format.html do
+        if post.update(user_id: @current_user.id, title: data[:title], text: data[:text],
+                       comments_counter: post.comments_counter,
+                       likes_counter: post.likes_counter)
+          flash[:success] = 'Post updated successfully!'
+          redirect_to user_path(@current_user)
+        else
+          flash.now[:error] = 'Error: Update failed!'
+          render :edit, locals: { post:, current_user: @current_user }
+        end
+      end
+    end
+  end
+
+  def destroy
+    post = Post.find_by(id: params[:id])
+    if post.destroy
+      respond_to do |format|
+        format.html do
+          flash[:success] = 'Post deleted successfully!'
+          redirect_to user_posts_path
+        end
+      end
+    else
+      flash.now[:error] = 'Error: Delete failed!'
     end
   end
 

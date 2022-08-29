@@ -1,6 +1,12 @@
 ## Pennode app
 
 > A Blog app that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> Share your experiences and stories with the cosmos of the pennoders
+image.png
+image.png
+image.png
+image.png
+image.png
 
 ### Built With
 
