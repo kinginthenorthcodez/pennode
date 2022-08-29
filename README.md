@@ -2,12 +2,12 @@
 
 > A Blog app that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 > Share your experiences and stories with the cosmos of the pennoders
-image.png
-image.png
-image.png
-image.png
-image.png
+![image](https://user-images.githubusercontent.com/94127418/187267474-616e7755-adcc-4d5f-b85f-dc2e36283d5d.png)
 
+![image](https://user-images.githubusercontent.com/94127418/187267006-ecbf6468-bef3-4c15-ab4a-66d21da494b1.png)
+
+![image](https://user-images.githubusercontent.com/94127418/187266731-16d90317-1400-4123-957a-2e2edb743157.png)
+#### NOTE: Still underconstruction
 ### Built With
 
 - Ruby on Rails
