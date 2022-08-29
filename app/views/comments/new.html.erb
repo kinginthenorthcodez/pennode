@@ -1,10 +1,17 @@
 <p style="color: #FF4433;">Your comment </p>
 <div class ="comment-section">
-<%= form_with model: @comment, url: user_post_comments_path do |f| %>
+<%= @post[:text] if @post%>
+<p>Post by: <%= @user.name%> <%= time_ago_in_words(Date.today - 1) %> ago </p>
+<% @comments.each do |comment| %>
+    <%= comment.text %>
+    by :<%= comment.user.name %>
+<% end %>
+<%= form_with model: @comment, class: "comment-form", url: user_post_comments_path do |f| %>
   <div class="comment-input>
-  <%= f.label :text %>
+  <%= f.label :text, class: "comment-label" %>
   <%= f.text_field :text, class: "comment-text" %>
   <%= f.submit class: "btn" %>
   </div>
 <% end %>
 </div>
+<h3 style="color: #FF4433;"><%= link_to 'Back 🔙', user_posts_path(@user,@post) %></h3>

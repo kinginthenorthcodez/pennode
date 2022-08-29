@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @posts = Post.find_by(id: params[:id])
-    @current_user_posts = Post.where(user_id: params[:id])
+    @post = Post.find_by(id: params[:id])
+    @current_user_posts = Post.where(user_id: params[:id]).includes(:user)
   end
 
   def create; end
@@ -14,6 +14,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:id)
+    params.require(:user).permit(:name, :photo, :bio)
   end
 end
