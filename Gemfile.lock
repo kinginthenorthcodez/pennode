@@ -73,6 +73,9 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.3)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.37.1)
       addressable
       matrix
@@ -177,6 +180,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    redis (4.8.0)
     regexp_parser (2.5.0)
     reline (0.3.0)
       io-console (~> 0.5)
@@ -240,6 +244,7 @@ GEM
     tzinfo-data (1.2022.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.2.0)
+    uniform_notifier (1.16.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -262,6 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bullet
   capybara
   debug
   ffi
@@ -271,6 +277,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-controller-testing
+  redis (~> 4.0)
   rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver

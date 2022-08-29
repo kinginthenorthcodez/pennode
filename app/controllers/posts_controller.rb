@@ -50,7 +50,8 @@ class PostsController < ApplicationController
     post = Post.find_by(id: params[:id])
     respond_to do |format|
       format.html do
-        if post.update(user_id: @current_user.id, title: data[:title], text: data[:text], comments_counter: post.comments_counter,
+        if post.update(user_id: @current_user.id, title: data[:title], text: data[:text],
+                       comments_counter: post.comments_counter,
                        likes_counter: post.likes_counter)
           flash[:success] = 'Post updated successfully!'
           redirect_to user_path(@current_user)
