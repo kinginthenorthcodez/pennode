@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @post = Post.find_by(id: params[:id])
-    @current_user_posts = Post.where(user_id: params[:id]).includes(:user)
+    @current_user_posts = Post.where(user_id: params[:id])
   end
 
   def create; end

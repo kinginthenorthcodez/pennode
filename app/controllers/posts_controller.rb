@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(user_id: params[:user_id]).includes(:user) # eager loading..
+    @posts = Post.where(user_id: params[:user_id]).includes(comments: [:user]) # eager loading..
     @user = User.find_by(id: params[:user_id])
   end
 

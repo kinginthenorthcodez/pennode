@@ -1,0 +1,29 @@
+{
+  "name": "pennode",
+  "version": "1.0.0",
+  "description": "> A Blog app that will show the list of posts and empower readers to interact with them by adding comments and liking posts.\r > Share your experiences and stories with the cosmos of the pennoders\r ![image](https://user-images.githubusercontent.com/94127418/187267474-616e7755-adcc-4d5f-b85f-dc2e36283d5d.png)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinginthenorthcodez/pennode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinginthenorthcodez/pennode/issues"
+  },
+  "homepage": "https://github.com/kinginthenorthcodez/pennode#readme",
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}

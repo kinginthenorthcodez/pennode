@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     @user = User.find_by(id: params[:user_id])
     @post = Post.find_by(user_id: params[:user_id], id: params[:id])
-    @comments = Comment.where(post_id: params[:id]).includes(:post)
+    @comments = Comment.where(post_id: params[:id]).includes(:post, :user)
   end
 
   def create
