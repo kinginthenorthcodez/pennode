@@ -5,13 +5,13 @@ RSpec.describe 'User post index page', type: :feature do
     @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                               bio: 'Teacher from Mexico.', posts_counter: 0)
 
-    @first_post = Post.create(user_id: @first_user.id, title: 'Hello', text: 'This is my first post',
+    @first_post = Post.create(user_id: @first_user.id, title: 'Hello1', text: 'This is my first post',
                               comments_counter: 0, likes_counter: 0)
-    @second_post = Post.create(user_id: @first_user.id, title: 'Hello', text: 'This is my second post',
+    @second_post = Post.create(user_id: @first_user.id, title: 'Hello2', text: 'This is my second post',
                                comments_counter: 0, likes_counter: 0)
-    @third_post = Post.create(user_id: @first_user.id, title: 'Hello', text: 'This is my third post',
+    @third_post = Post.create(user_id: @first_user.id, title: 'Hello3', text: 'This is my third post',
                               comments_counter: 0, likes_counter: 0)
-    @fourth_post = Post.create(user_id: @first_user.id, title: 'Hello', text: 'This is my fourth post',
+    @fourth_post = Post.create(user_id: @first_user.id, title: 'Hello4', text: 'This is my fourth post',
                                comments_counter: 0, likes_counter: 0)
   end
 
@@ -71,8 +71,8 @@ RSpec.describe 'User post index page', type: :feature do
   end
 
   it 'When I click on a post, it redirects me to that posts show page.' do
-    visit "/users/#{@first_user.id}/posts"
-    click_link("#{@second_post.id}#{@second_post.title}")
-    expect(page).to have_content("Post ##{@second_post.id} by #{@first_user.name}")
+    visit user_posts_path(@first_user)
+    click_on @second_post.text.truncate(15)
+    expect(page).to have_current_path(user_post_path(@first_user, @second_post))
   end
 end

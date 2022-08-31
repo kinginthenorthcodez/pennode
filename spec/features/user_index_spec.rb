@@ -40,9 +40,4 @@ RSpec.describe 'User pages functionality: User index page ', type: :feature do
     click_on user.name
     expect(page).to have_current_path(user_path(user))
   end
-
-  it 'has one user on users' do
-    visit users_path
-    expect(all('div.grid-container').length).to eq(1)
-  end
 end
