@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :require_permision_create, only: [:create]
+  before_action :require_permision_delete, only: [:destroy]
+
   def new
     @comment = Comment.new
     @user = User.find_by(id: params[:user_id])
@@ -7,6 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def create
+    cookies[:postComments] = { value: 'Comment.all', expires: Time.now + 3600 }
+    cookies[:OkpostComments] = { value: 'Okay there', expires: Time.now + 3600 }
     data = comment_params
     @current_user = current_user
     comment = Comment.new(post_id: params[:post_id], user_id: @current_user.id, text: data[:text])
@@ -19,7 +24,31 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      flash[:success] = 'Comment Successfully deleted!'
+    else
+      flash.now[:error] = 'Error: could not delete comment!'
+    end
+    redirect_to user_post_path(id: params[:post_id])
+  end
+
   private
+
+  def require_permision_create
+    if user_signed_in?
+      flash.now[:success] = "Thnaks #{current_user.name}"
+    else
+      redirect_to new_user_post_comment_path, flash: { error: 'Sign in to leave a comment!!' }
+    end
+  end
+
+  def require_permision_delete
+    return unless Comment.find(params[:id]).user != current_user do
+      redirect_to user_posts_path(id: params[:post_id]), flash: { error: 'You dont have permission to do that!' }
+    end
+  end
 
   def comment_params
     params.require(:comment).permit(:text)
