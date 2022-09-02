@@ -1,12 +1,12 @@
 class Post < ApplicationRecord
-  validates :title, presence: true, length: { in: 1..250 }
-  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
-  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :title, presence: true, length: { in: 1..250 }, allow_blank: false
+  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }, allow_blank: false
+  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }, allow_blank: false
 
   belongs_to :user
 
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   after_create :update_post_counter
 
