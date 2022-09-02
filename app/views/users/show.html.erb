@@ -1,4 +1,4 @@
 <h3 style="color: #FF4433;"> User Profile</h3>
 <%= render partial: 'user', layout: 'shared/box', locals: { user: @user, posts: @current_user_posts } %>
-<h3 style="text-align: center; color: #fff;"> <%= link_to 'See all posts ☜',user_posts_path(@post) if @post %> </h3>
+<h3 id="Posts-link" style="text-align: center; color: #fff;"><%= link_to 'See all posts ☜',user_posts_path(@post) if @post %> </h3>
 <h3 style="color: #FF4433;"><%= link_to 'Back 🔙', users_path %></h3>
