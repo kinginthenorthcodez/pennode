@@ -17,6 +17,7 @@
 - Clone Repository using HTTPS
 - Devise for authentication
 - CanCan for authorization
+- Sass
 
 > git clone https://github.com/kinginthenorthcodez/pennode
 
