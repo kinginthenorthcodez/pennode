@@ -8,11 +8,15 @@
 
 ![image](https://user-images.githubusercontent.com/94127418/187266731-16d90317-1400-4123-957a-2e2edb743157.png)
 #### NOTE: Still underconstruction
+
+
 ### Built With
 
 - Ruby on Rails
 - Development set up
 - Clone Repository using HTTPS
+- Devise for authentication
+- CanCan for authorization
 
 > git clone https://github.com/kinginthenorthcodez/pennode
 
