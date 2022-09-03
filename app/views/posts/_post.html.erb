@@ -10,7 +10,7 @@
 </div>
 <% posts.each do |post| %>
 <div class="post<%=" #{post.title}#{post.id}"%>"> 
-   <h3> Post &#35;<%=post.id %><%= link_to '🖋', edit_user_post_path(user,post) %> <%= link_to '🗑', user_post_path(user,post), method: :delete,data: { confirm: 'Are you sure?' } %></h3>
+   <h3> Post &#35;<%=post.id %><%if can? [:edit, :destroy], post %> <%= link_to '🖋', edit_user_post_path(user,post) %> <%= link_to '🗑', user_post_path(user,post), method: :delete,data: { confirm: 'Are you sure?' } %><%end%></h3>
    <p> <%= link_to post.text.truncate(15), user_post_path(user,post) %> </p>
    <p class = "profile-stats"><span class= "comments-stats">Comments: <%= post.comments_counter %></span><span class= "likes-stats">🖒Likes:<%= post.likes_counter %> </span></p>
 </div>
@@ -18,7 +18,9 @@
      <% post.comments.each do |comment| %>
      <% if comment.post_id == post.id %>
      <p style= "color: #900C3F; padding: 5px;">
+     <%if can? :destroy, comment%>
      <%= button_to '🗑', user_post_comment_path(post.user,post,comment), method: :delete,data: { confirm: 'Are you sure?' } %>
+     <%end%>
      <%= comment.user.name %> : 
      <%= comment.text %> 
      </p>

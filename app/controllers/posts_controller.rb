@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_permision, only: %i[edit update destroy]
-
+  load_and_authorize_resource
 
   def index
     @posts = Post.all.includes(:user, comments: [:user]) # eager loading..
