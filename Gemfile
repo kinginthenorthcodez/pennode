@@ -49,6 +49,8 @@ gem 'ffi'
 
 # N + 1 query optmizer
 
+#Auth to for RoR
+gem 'devise'
 # Controller testing
 gem 'rails-controller-testing'
 # Use Sass to process CSS

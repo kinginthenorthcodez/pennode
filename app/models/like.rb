@@ -8,6 +8,6 @@ class Like < ApplicationRecord
   after_create :update_likes_counter
 
   def update_likes_counter
-    post.update(likes_counter: (post.likes_counter || 0) + 1)
+    post.update(likes_counter: (post.likes_counter.length - 1 || 0 ) + 1)
   end
 end
