@@ -18,6 +18,7 @@
      <% post.comments.each do |comment| %>
      <% if comment.post_id == post.id %>
      <p style= "color: #900C3F; padding: 5px;">
+     <%= button_to '🗑', user_post_comment_path(post.user,post,comment), method: :delete,data: { confirm: 'Are you sure?' } %>
      <%= comment.user.name %> : 
      <%= comment.text %> 
      </p>

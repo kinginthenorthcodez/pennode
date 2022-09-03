@@ -1,12 +1,10 @@
 class PostsController < ApplicationController
   before_action :require_permision, only: %i[edit update destroy]
 
-  puts 'Am in the post controller!'
 
   def index
     @posts = Post.all.includes(:user, comments: [:user]) # eager loading..
     @user = User.find_by(id: params[:user_id])
-    puts "current cookie value in posts : #{cookies[:haircolor]} and user: #{cookies[:currerUser]}"
   end
 
   def show
@@ -54,7 +52,7 @@ class PostsController < ApplicationController
     post = Post.find_by(id: params[:id])
     respond_to do |format|
       format.html do
-        if post.update(user_id: current_user, title: data[:title], text: data[:text],
+        if post.update(user_id: current_user.id, title: data[:title], text: data[:text],
                        comments_counter: post.comments_counter,
                        likes_counter: post.likes_counter)
           flash[:success] = 'Post updated successfully!'

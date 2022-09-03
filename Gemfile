@@ -46,7 +46,7 @@ gem 'bootsnap', require: false
 
 # ffi dependecies
 gem 'ffi'
-
+gem 'devise'
 # N + 1 query optmizer
 
 # Controller testing

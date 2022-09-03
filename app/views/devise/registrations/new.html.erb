@@ -1,9 +1,9 @@
 <h2>Sign up</h2>
-<div class="reg-form">
+<div class="reg-from">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
+   
+   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
@@ -16,12 +16,12 @@
     <%= f.label :bio %><br />
     <%= f.text_field :bio, autofocus: true, autocomplete: "bio" %>
   </div>
-  
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-  
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -34,11 +34,9 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
-  <div class="field">
+ <div class="field">
     <%= f.hidden_field :posts_counter,value:0 %>
   </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

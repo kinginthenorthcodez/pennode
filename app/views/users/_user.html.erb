@@ -15,7 +15,7 @@
 <% posts.each do |post| %>
 <div class="post"> 
    <h3> Post &#35;<%=post.id %></h3>
-   <p> <%= post.text %> </p>
+   <p> <%= link_to post.text.truncate(15), user_post_path(current_user,post) %> </p>
    <p class = "profile-stats"><span class= "comments-stats">Comments: <%= post.comments_counter %></span><span class= "likes-stats">Likes:<%= post.likes_counter %> </span></p>
 </div>
 <% end %>
