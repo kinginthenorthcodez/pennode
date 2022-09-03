@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all.includes(:user, comments: [:user]) # eager loading..
+    @posts = Post.all.includes(comments: [:user]) # eager loading..
     @user = User.find_by(id: params[:user_id])
   end
 
