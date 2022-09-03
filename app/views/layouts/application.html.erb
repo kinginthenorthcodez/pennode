@@ -13,9 +13,23 @@
   <body>
   <%= render 'shared/header' %>
   <h3 style="color: orange;"> You are just a pen away</h3>
+   <div class="notfications">
    <% flash.each do |key, message| %>
      <p><%= message %></p>
    <% end %>
+   </div>
+
+   <div class = "page-links">
+   <% if user_signed_in? %>
+   <%= link_to "Hi! #{current_user.email}", edit_user_registration_path %>
+   <%= link_to "All Posts", user_posts_path(current_user) %>
+   <%= link_to "My Posts", user_path(current_user) %>
+   <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+   <% else %>
+   <%= link_to 'Sign in', new_user_session_path %>
+   <%= link_to 'Sign up', new_user_registration_path %>
+   <%end %>
+   </div>
     <%= yield %>
   <%= render 'shared/footer' %>
   </body>

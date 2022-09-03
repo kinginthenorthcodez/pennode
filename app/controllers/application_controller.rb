@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(_resource)
     flash[:notice] = 'notice: Please Welcome !}'
-    users_path
+    root_path
   end
 
   def after_sign_out_path_for(_resource)
     cookies[:lastUsersession] = current_user
     flash[:notice] = 'notice:  Where you going!!'
-    root_path
+    user_session_path
   end
 
   def configure_permitted_parameters
