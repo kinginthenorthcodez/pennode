@@ -51,6 +51,8 @@ gem 'ffi'
 ## gem for Authentication
 gem 'devise'
 
+# Auth to for RoR
+gem 'devise'
 # Controller testing
 gem 'rails-controller-testing'
 # Use Sass to process CSS
