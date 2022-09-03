@@ -10,8 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    cookies[:postComments] = { value: 'Comment.all', expires: Time.now + 3600 }
-    cookies[:OkpostComments] = { value: 'Okay there', expires: Time.now + 3600 }
     data = comment_params
     @current_user = current_user
     comment = Comment.new(post_id: params[:post_id], user_id: @current_user.id, text: data[:text])
@@ -45,7 +43,9 @@ class CommentsController < ApplicationController
   end
 
   def require_permision_delete
-    return unless Comment.find(params[:id]).user != current_user do
+    if Comment.find(params[:id]).user == current_user
+      { confirm: 'Are you sure' }
+    else
       redirect_to user_posts_path(id: params[:post_id]), flash: { error: 'You dont have permission to do that!' }
     end
   end

@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
   before_action :require_permision, only: %i[edit update destroy]
 
-  puts 'Am in the post controller!'
-
   def index
-    @posts = Post.all.includes(:user, comments: [:user]) # eager loading..
+    @posts = Post.all.includes(comments: [:user]) # eager loading..
     @user = User.find_by(id: params[:user_id])
-    puts "current cookie value in posts : #{cookies[:haircolor]} and user: #{cookies[:currerUser]}"
   end
 
   def show
