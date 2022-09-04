@@ -249,8 +249,8 @@ div.field_with_success {
   display: inline;
 }
 
-.pass-forms,
-.reg-form,
+.pass-form,
+.reg-from,
 .sign-form {
   width: 80%;
   background-color: #fffaf0;
@@ -262,19 +262,20 @@ div.field_with_success {
   padding: 5%;
 }
 
-.page-links {
-  display: flex;
-  flex-direction: column;
+.notifications {
+  width: 20%;
+  background-color: #fffaf0;
   color: rgb(255, 68, 51);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  padding: 1%;
-  gap: 5px;
 }
 
-.notfications {
-  width: 20%;
-  background-color: #fffaf0;
-  font-family: Arial, Helvetica, sans-serif;
+.page-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5%;
   color: rgb(255, 68, 51);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }

@@ -1,7 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :require_permision_create, only: [:create]
-  before_action :require_permision_delete, only: [:destroy]
-
   def new
     @comment = Comment.new
     @user = User.find_by(id: params[:user_id])

@@ -43,14 +43,14 @@ gem 'redis', '~> 4.0'
 gem 'tzinfo-data'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
+## gem for authorization in RoR
+gem 'cancancan'
+# N + 1 query optmizer
 # ffi dependecies
 gem 'ffi'
-
-# N + 1 query optmizer
-
-# Auth to for RoR
+## gem for Authentication
 gem 'devise'
+
 # Controller testing
 gem 'rails-controller-testing'
 # Use Sass to process CSS

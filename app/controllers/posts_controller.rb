@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_permision, only: %i[edit update destroy]
+  load_and_authorize_resource
 
   def index
     @posts = Post.all.includes(comments: [:user]) # eager loading..
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     post = Post.find_by(id: params[:id])
     respond_to do |format|
       format.html do
-        if post.update(user_id: current_user, title: data[:title], text: data[:text],
+        if post.update(user_id: current_user.id, title: data[:title], text: data[:text],
                        comments_counter: post.comments_counter,
                        likes_counter: post.likes_counter)
           flash[:success] = 'Post updated successfully!'
