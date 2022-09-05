@@ -2,20 +2,25 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @user = User.find_by(id: params[:user_id])
-    @post = Post.find_by(user_id: params[:user_id], id: params[:id])
-    @comments = Comment.where(post_id: params[:id]).includes(:post, :user)
+    @post = Post.find_by(id: params[:post_id])
+    @comments = Comment.where(post_id: params[:post_id]).includes(:user)
   end
 
   def create
     data = comment_params
-    @current_user = current_user
-    comment = Comment.new(post_id: params[:post_id], user_id: @current_user.id, text: data[:text])
-    if comment.save
-      flash[:success] = 'Comment successfully created!'
-      redirect_to user_post_path(id: params[:post_id])
+    if user_signed_in?
+      @current_user = current_user
+      comment = Comment.new(post_id: params[:post_id], user_id: @current_user.id, text: data[:text])
+      if comment.save
+        flash[:success] = 'Comment successfully created!'
+        redirect_to new_user_post_comment_path(user_id: params[:user_id], id: params[:post_id])
+      else
+        flash[:error] = 'Error: comment could not be created!'
+        redirect_to new_user_post_comment_path
+      end
     else
-      flash.now[:error] = 'Error: comment could not be created!'
-      redirect_to new_user_post_comment
+      flash[:error] = 'You need to sign in to comment!'
+      redirect_to new_user_post_comment_path
     end
   end
 

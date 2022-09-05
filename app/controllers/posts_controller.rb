@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.all.includes(comments: [:user]) # eager loading..
+    @posts = Post.all.includes(:user, comments: [:user]) # eager loading..
     @user = User.find_by(id: params[:user_id])
   end
 
@@ -24,14 +24,19 @@ class PostsController < ApplicationController
   def create
     data = post_params
     @current_user = current_user
-    post = Post.new(user_id: current_user.id, title: data[:title], text: data[:text], comments_counter: 0,
-                    likes_counter: 0)
-    if post.save
-      flash[:success] = 'Post successfully created!'
-      redirect_to user_path(current_user)
-    else
-      flash.now[:error] = 'Error: Post could not be created!'
-      render :new, locals: { post:, current_user: }
+    respond_to do |format|
+      format.html do
+        post = Post.new(user_id: current_user.id, title: data[:title], text: data[:text],
+                        comments_counter: 0,
+                        likes_counter: 0)
+        if post.save
+          flash[:success] = 'Post successfully created!'
+          redirect_to user_path(current_user)
+        else
+          flash.now[:error] = 'Error: Post could not be created!'
+          render :new, locals: { post:, current_user: }
+        end
+      end
     end
   end
 
@@ -80,6 +85,7 @@ class PostsController < ApplicationController
 
   private
 
+  # Helper method that can do authorization on resource,
   def require_permision
     if Post.find(params[:id]).user == current_user
       nil

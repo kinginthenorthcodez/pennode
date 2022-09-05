@@ -21,4 +21,14 @@ class User < ApplicationRecord
   def is?(requested_role)
     role == requested_role.to_s
   end
+
+  def as_json(_options = {})
+    { name: }
+  end
+
+  # the authenticate method from devise documentation
+  def self.authenticate(email, password)
+    user = User.find_for_authentication(email:)
+    user&.valid_password?(password) ? user : nil
+  end
 end

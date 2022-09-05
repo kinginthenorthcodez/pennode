@@ -51,6 +51,9 @@ gem 'ffi'
 ## gem for Authentication
 gem 'devise'
 
+# Api Authentications
+gem 'doorkeeper', '~> 5.4.0'
+# gem 'simple_token_authentication', '~> 1.0' # see semver.org
 # Controller testing
 gem 'rails-controller-testing'
 # Use Sass to process CSS

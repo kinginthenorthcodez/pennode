@@ -16,9 +16,10 @@
 - Ruby on Rails
 - Development set up
 - Clone Repository using HTTPS
-- Devise for authentication
+- Devise for authentication on frontend
 - CanCan for authorization
-- Sass
+- Doorkeeper for authentication on backend APIs 
+- Sass/Css
 
 > git clone https://github.com/kinginthenorthcodez/pennode
 
@@ -28,7 +29,9 @@
 
 ### Available Scripts
 
-> bundle install rails server
+> bundle install
+
+> rails server
 
 ### Available Scripts to Run Test cases
 
@@ -45,6 +48,7 @@
 ...
 ` $ rake db:test:load`
 
+``` $ rails db:seed ``` to seed the app database
 - Above rake db:migrate runs any pending migrations on the developemnt environment and updates db/schema.rb. rake db:test:load recreates the test database from the current db/schema.rb. On subsequent attempts it is a good to first run db:test:prepare as it first checks for pending migrations and warns you appropriately.
 
 ### Tests using Rspec
@@ -64,6 +68,9 @@ GitHub: @kinginthenorthcodez
 - Feel free to check the issues page.
   https://github.com/kinginthenorthcodez/pennode/issues
 
+
+### [Api documentation]()
+> Note: To release latest 12-09-2022
 ### Show your support
 
 Give a ⭐️ if you like this project!
