@@ -1,0 +1,14 @@
+<div class="post-form">
+<%= form_with model: post, url: parsed_url, method: parsed_action, local: true, scope: :post do |f| %>
+  <div>
+     <%= f.label :title, class: "title-label" %>
+     <%= f.text_field :title, placeholder: "Your post's title here..." %>
+  <div>
+  <div>
+     <%= f.text_area :text, placeholder: "Type your post here.." %>
+  </div>
+  <div>
+    <%= f.submit class: "btn"%>
+  </div>
+<% end %>
+</div>

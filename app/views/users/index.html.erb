@@ -1,0 +1,12 @@
+<h3 style="color: #FF4433;">Pennode Users</h3>
+<% @users.each do |user| %>
+<div class="grid-container">
+  <div class= "profile-photo">
+   <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=" alt="profile photo" />
+  </div>
+  <div class="profile-details">
+    <h3 class= "profile-name"> <%= link_to user[:name], user_path(user) %> </h3>
+    <p class = "profile-stats"> 📝Number of posts: <span class= "post-stats"><%= user[:posts_counter] %></span></p>
+  </div>
+</div>
+<% end %>

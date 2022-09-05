@@ -1,0 +1,5 @@
+<h3 style="color: #FF4433;">User Posts</h3>
+<%= render partial: 'post', layout: 'shared/box', locals: { user: @user, posts: @posts } %>
+<h3 style="color: #FF4433;"><%if can? :create, @post%><%= link_to 'Create new post', new_user_post_path %><%end%></h3>
+<p style="color: #FF4433;"> Here is your Current Posts: <ul> <% @posts.each { |post| %> <li> <%= link_to "#{post[:id]}#{post[:title]}",user_post_path(@user,post) %> </li>  <% } %> </ul> </p>
+<%= button_to "Paginations"%>exit;
