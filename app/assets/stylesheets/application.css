@@ -216,7 +216,29 @@ input[type=submit]:hover {
   height: 400px;
   background-color: #fffaf0;
   margin: 0 auto;
-  padding: 10%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-comments-section {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.inner-comments-section .comment-post {
+  color: #181716;
+}
+
+.inner-comments-section .comment-msg {
+  display: flex;
+  flex-direction: column;
+  color: orangered;
+}
+
+.name-tag {
+  color: #04aa6d;
 }
 
 .comment-section .comment-form {
